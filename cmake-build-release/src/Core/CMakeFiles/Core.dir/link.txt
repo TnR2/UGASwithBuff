@@ -1,0 +1,2 @@
+/usr/bin/ar qc /home/alliance/Desktop/UGAS/lib/libCore.a CMakeFiles/Core.dir/Identifier/Armor/ArmorIdentifier_V1.cpp.o CMakeFiles/Core.dir/Identifier/Armor/ArmorIdentifier_V2.cpp.o CMakeFiles/Core.dir/Identifier/Number/NumberIdentifier_V1.cpp.o CMakeFiles/Core.dir/Predictor/Buff/Ceres/Ceres.cpp.o CMakeFiles/Core.dir/Predictor/Buff/EKF/EKF.cpp.o CMakeFiles/Core.dir/Predictor/Buff/LM/LM.cpp.o CMakeFiles/Core.dir/Pretreator/Armor/ArmorPretreator_V1.cpp.o CMakeFiles/Core.dir/Pretreator/Armor/ArmorPretreator_V2.cpp.o
+/usr/bin/ranlib /home/alliance/Desktop/UGAS/lib/libCore.a

@@ -1,0 +1,175 @@
+2023-06-12 15:45:10,247 ERROR [default] Uncaught N2cv9ExceptionE: OpenCV(4.7.0) /home/alliance/Downloads/opencv-4.7.0/modules/core/src/matrix.cpp:808: error: (-215:Assertion failed) 0 <= roi.x && 0 <= roi.width && roi.x + roi.width <= m.cols && 0 <= roi.y && 0 <= roi.height && roi.y + roi.height <= m.rows in function 'Mat'
+
+2023-06-12 15:45:10,247 ERROR [default] Program crashed, will restart in 0 second(s)... 
+2023-06-18 09:53:31,773 ERROR [default] nRet [-2147483641]
+2023-06-18 09:53:31,780 ERROR [default] <St13runtime_error> thrown in file "/home/alliance/Desktop/UGAS/src/Core/ImgCapture/Common/HikCameraCapture.h", line 293, at [unknown function]
+2023-06-18 09:53:33,118 ERROR [default] Uncaught St13runtime_error: No frame data!
+2023-06-18 09:53:33,118 ERROR [default] Program crashed, will restart in 0 second(s)... 
+2023-07-01 20:40:32,436 ERROR [default] Find No Devices.
+2023-07-01 20:40:32,436 ERROR [default] <St13runtime_error> thrown in file "/home/iruma/Desktop/UGASwithBuff/src/Core/ImgCapture/Common/HikCameraCapture.h", line 226, at [unknown function]
+2023-07-01 20:40:32,436 ERROR [default] Uncaught St13runtime_error: HikCamera init failed, see log for details.
+2023-07-01 20:40:32,436 ERROR [default] Program crashed, will restart in 0 second(s)... 
+2023-07-01 20:40:32,537 ERROR [default] Find No Devices.
+2023-07-01 20:40:32,537 ERROR [default] <St13runtime_error> thrown in file "/home/iruma/Desktop/UGASwithBuff/src/Core/ImgCapture/Common/HikCameraCapture.h", line 226, at [unknown function]
+2023-07-01 20:40:32,537 ERROR [default] Uncaught St13runtime_error: HikCamera init failed, see log for details.
+2023-07-01 20:40:32,537 ERROR [default] Program crashed, will restart in 0 second(s)... 
+2023-07-01 20:40:32,638 ERROR [default] Find No Devices.
+2023-07-01 20:40:32,638 ERROR [default] <St13runtime_error> thrown in file "/home/iruma/Desktop/UGASwithBuff/src/Core/ImgCapture/Common/HikCameraCapture.h", line 226, at [unknown function]
+2023-07-01 20:40:32,638 ERROR [default] Uncaught St13runtime_error: HikCamera init failed, see log for details.
+2023-07-01 20:40:32,638 ERROR [default] Program crashed, will restart in 0 second(s)... 
+2023-07-01 20:40:32,739 ERROR [default] Find No Devices.
+2023-07-01 20:40:32,739 ERROR [default] <St13runtime_error> thrown in file "/home/iruma/Desktop/UGASwithBuff/src/Core/ImgCapture/Common/HikCameraCapture.h", line 226, at [unknown function]
+2023-07-01 20:40:32,740 ERROR [default] Uncaught St13runtime_error: HikCamera init failed, see log for details.
+2023-07-01 20:40:32,740 ERROR [default] Program crashed, will restart in 0 second(s)... 
+2023-07-01 20:40:32,840 ERROR [default] Find No Devices.
+2023-07-01 20:40:32,841 ERROR [default] <St13runtime_error> thrown in file "/home/iruma/Desktop/UGASwithBuff/src/Core/ImgCapture/Common/HikCameraCapture.h", line 226, at [unknown function]
+2023-07-01 20:40:32,841 ERROR [default] Uncaught St13runtime_error: HikCamera init failed, see log for details.
+2023-07-01 20:40:32,841 ERROR [default] Program crashed, will restart in 0 second(s)... 
+2023-07-01 20:40:32,942 ERROR [default] Find No Devices.
+2023-07-01 20:40:32,942 ERROR [default] <St13runtime_error> thrown in file "/home/iruma/Desktop/UGASwithBuff/src/Core/ImgCapture/Common/HikCameraCapture.h", line 226, at [unknown function]
+2023-07-01 20:40:32,942 ERROR [default] Uncaught St13runtime_error: HikCamera init failed, see log for details.
+2023-07-01 20:40:32,942 ERROR [default] Program crashed, will restart in 0 second(s)... 
+2023-07-01 20:40:33,043 ERROR [default] Find No Devices.
+2023-07-01 20:40:33,043 ERROR [default] <St13runtime_error> thrown in file "/home/iruma/Desktop/UGASwithBuff/src/Core/ImgCapture/Common/HikCameraCapture.h", line 226, at [unknown function]
+2023-07-01 20:40:33,043 ERROR [default] Uncaught St13runtime_error: HikCamera init failed, see log for details.
+2023-07-01 20:40:33,043 ERROR [default] Program crashed, will restart in 0 second(s)... 
+2023-07-01 20:40:33,144 ERROR [default] Find No Devices.
+2023-07-01 20:40:33,144 ERROR [default] <St13runtime_error> thrown in file "/home/iruma/Desktop/UGASwithBuff/src/Core/ImgCapture/Common/HikCameraCapture.h", line 226, at [unknown function]
+2023-07-01 20:40:33,145 ERROR [default] Uncaught St13runtime_error: HikCamera init failed, see log for details.
+2023-07-01 20:40:33,145 ERROR [default] Program crashed, will restart in 0 second(s)... 
+2023-07-01 20:40:33,246 ERROR [default] Find No Devices.
+2023-07-01 20:40:33,246 ERROR [default] <St13runtime_error> thrown in file "/home/iruma/Desktop/UGASwithBuff/src/Core/ImgCapture/Common/HikCameraCapture.h", line 226, at [unknown function]
+2023-07-01 20:40:33,246 ERROR [default] Uncaught St13runtime_error: HikCamera init failed, see log for details.
+2023-07-01 20:40:33,246 ERROR [default] Program crashed, will restart in 0 second(s)... 
+2023-07-01 20:40:33,347 ERROR [default] Find No Devices.
+2023-07-01 20:40:33,347 ERROR [default] <St13runtime_error> thrown in file "/home/iruma/Desktop/UGASwithBuff/src/Core/ImgCapture/Common/HikCameraCapture.h", line 226, at [unknown function]
+2023-07-01 20:40:33,347 ERROR [default] Uncaught St13runtime_error: HikCamera init failed, see log for details.
+2023-07-01 20:40:33,347 ERROR [default] Program crashed, will restart in 0 second(s)... 
+2023-07-01 20:40:33,448 ERROR [default] Find No Devices.
+2023-07-01 20:40:33,448 ERROR [default] <St13runtime_error> thrown in file "/home/iruma/Desktop/UGASwithBuff/src/Core/ImgCapture/Common/HikCameraCapture.h", line 226, at [unknown function]
+2023-07-01 20:40:33,448 ERROR [default] Uncaught St13runtime_error: HikCamera init failed, see log for details.
+2023-07-01 20:40:33,448 ERROR [default] Program crashed, will restart in 0 second(s)... 
+2023-07-01 20:40:33,549 ERROR [default] Find No Devices.
+2023-07-01 20:40:33,549 ERROR [default] <St13runtime_error> thrown in file "/home/iruma/Desktop/UGASwithBuff/src/Core/ImgCapture/Common/HikCameraCapture.h", line 226, at [unknown function]
+2023-07-01 20:40:33,549 ERROR [default] Uncaught St13runtime_error: HikCamera init failed, see log for details.
+2023-07-01 20:40:33,549 ERROR [default] Program crashed, will restart in 0 second(s)... 
+2023-07-01 20:40:33,650 ERROR [default] Find No Devices.
+2023-07-01 20:40:33,650 ERROR [default] <St13runtime_error> thrown in file "/home/iruma/Desktop/UGASwithBuff/src/Core/ImgCapture/Common/HikCameraCapture.h", line 226, at [unknown function]
+2023-07-01 20:40:33,650 ERROR [default] Uncaught St13runtime_error: HikCamera init failed, see log for details.
+2023-07-01 20:40:33,650 ERROR [default] Program crashed, will restart in 0 second(s)... 
+2023-07-01 20:40:33,751 ERROR [default] Find No Devices.
+2023-07-01 20:40:33,751 ERROR [default] <St13runtime_error> thrown in file "/home/iruma/Desktop/UGASwithBuff/src/Core/ImgCapture/Common/HikCameraCapture.h", line 226, at [unknown function]
+2023-07-01 20:40:33,751 ERROR [default] Uncaught St13runtime_error: HikCamera init failed, see log for details.
+2023-07-01 20:40:33,751 ERROR [default] Program crashed, will restart in 0 second(s)... 
+2023-07-01 20:40:33,852 ERROR [default] Find No Devices.
+2023-07-01 20:40:33,852 ERROR [default] <St13runtime_error> thrown in file "/home/iruma/Desktop/UGASwithBuff/src/Core/ImgCapture/Common/HikCameraCapture.h", line 226, at [unknown function]
+2023-07-01 20:40:33,852 ERROR [default] Uncaught St13runtime_error: HikCamera init failed, see log for details.
+2023-07-01 20:40:33,852 ERROR [default] Program crashed, will restart in 0 second(s)... 
+2023-07-01 20:40:33,952 ERROR [default] Find No Devices.
+2023-07-01 20:40:33,953 ERROR [default] <St13runtime_error> thrown in file "/home/iruma/Desktop/UGASwithBuff/src/Core/ImgCapture/Common/HikCameraCapture.h", line 226, at [unknown function]
+2023-07-01 20:40:33,953 ERROR [default] Uncaught St13runtime_error: HikCamera init failed, see log for details.
+2023-07-01 20:40:33,953 ERROR [default] Program crashed, will restart in 0 second(s)... 
+2023-07-01 20:40:34,054 ERROR [default] Find No Devices.
+2023-07-01 20:40:34,054 ERROR [default] <St13runtime_error> thrown in file "/home/iruma/Desktop/UGASwithBuff/src/Core/ImgCapture/Common/HikCameraCapture.h", line 226, at [unknown function]
+2023-07-01 20:40:34,054 ERROR [default] Uncaught St13runtime_error: HikCamera init failed, see log for details.
+2023-07-01 20:40:34,054 ERROR [default] Program crashed, will restart in 0 second(s)... 
+2023-07-01 20:40:34,154 ERROR [default] Find No Devices.
+2023-07-01 20:40:34,154 ERROR [default] <St13runtime_error> thrown in file "/home/iruma/Desktop/UGASwithBuff/src/Core/ImgCapture/Common/HikCameraCapture.h", line 226, at [unknown function]
+2023-07-01 20:40:34,154 ERROR [default] Uncaught St13runtime_error: HikCamera init failed, see log for details.
+2023-07-01 20:40:34,154 ERROR [default] Program crashed, will restart in 0 second(s)... 
+2023-07-01 20:40:34,255 ERROR [default] Find No Devices.
+2023-07-01 20:40:34,255 ERROR [default] <St13runtime_error> thrown in file "/home/iruma/Desktop/UGASwithBuff/src/Core/ImgCapture/Common/HikCameraCapture.h", line 226, at [unknown function]
+2023-07-01 20:40:34,255 ERROR [default] Uncaught St13runtime_error: HikCamera init failed, see log for details.
+2023-07-01 20:40:34,255 ERROR [default] Program crashed, will restart in 0 second(s)... 
+2023-07-01 20:40:34,356 ERROR [default] Find No Devices.
+2023-07-01 20:40:34,356 ERROR [default] <St13runtime_error> thrown in file "/home/iruma/Desktop/UGASwithBuff/src/Core/ImgCapture/Common/HikCameraCapture.h", line 226, at [unknown function]
+2023-07-01 20:40:34,356 ERROR [default] Uncaught St13runtime_error: HikCamera init failed, see log for details.
+2023-07-01 20:40:34,356 ERROR [default] Program crashed, will restart in 0 second(s)... 
+2023-07-01 20:40:34,457 ERROR [default] Find No Devices.
+2023-07-01 20:40:34,457 ERROR [default] <St13runtime_error> thrown in file "/home/iruma/Desktop/UGASwithBuff/src/Core/ImgCapture/Common/HikCameraCapture.h", line 226, at [unknown function]
+2023-07-01 20:40:34,457 ERROR [default] Uncaught St13runtime_error: HikCamera init failed, see log for details.
+2023-07-01 20:40:34,457 ERROR [default] Program crashed, will restart in 0 second(s)... 
+2023-07-01 20:40:34,557 ERROR [default] Find No Devices.
+2023-07-01 20:40:34,558 ERROR [default] <St13runtime_error> thrown in file "/home/iruma/Desktop/UGASwithBuff/src/Core/ImgCapture/Common/HikCameraCapture.h", line 226, at [unknown function]
+2023-07-01 20:40:34,558 ERROR [default] Uncaught St13runtime_error: HikCamera init failed, see log for details.
+2023-07-01 20:40:34,558 ERROR [default] Program crashed, will restart in 0 second(s)... 
+2023-07-01 20:40:34,658 ERROR [default] Find No Devices.
+2023-07-01 20:40:34,658 ERROR [default] <St13runtime_error> thrown in file "/home/iruma/Desktop/UGASwithBuff/src/Core/ImgCapture/Common/HikCameraCapture.h", line 226, at [unknown function]
+2023-07-01 20:40:34,658 ERROR [default] Uncaught St13runtime_error: HikCamera init failed, see log for details.
+2023-07-01 20:40:34,659 ERROR [default] Program crashed, will restart in 0 second(s)... 
+2023-07-01 20:40:34,759 ERROR [default] Find No Devices.
+2023-07-01 20:40:34,759 ERROR [default] <St13runtime_error> thrown in file "/home/iruma/Desktop/UGASwithBuff/src/Core/ImgCapture/Common/HikCameraCapture.h", line 226, at [unknown function]
+2023-07-01 20:40:34,759 ERROR [default] Uncaught St13runtime_error: HikCamera init failed, see log for details.
+2023-07-01 20:40:34,759 ERROR [default] Program crashed, will restart in 0 second(s)... 
+2023-07-01 20:40:34,860 ERROR [default] Find No Devices.
+2023-07-01 20:40:34,860 ERROR [default] <St13runtime_error> thrown in file "/home/iruma/Desktop/UGASwithBuff/src/Core/ImgCapture/Common/HikCameraCapture.h", line 226, at [unknown function]
+2023-07-01 20:40:34,860 ERROR [default] Uncaught St13runtime_error: HikCamera init failed, see log for details.
+2023-07-01 20:40:34,860 ERROR [default] Program crashed, will restart in 0 second(s)... 
+2023-07-01 20:40:34,961 ERROR [default] Find No Devices.
+2023-07-01 20:40:34,961 ERROR [default] <St13runtime_error> thrown in file "/home/iruma/Desktop/UGASwithBuff/src/Core/ImgCapture/Common/HikCameraCapture.h", line 226, at [unknown function]
+2023-07-01 20:40:34,961 ERROR [default] Uncaught St13runtime_error: HikCamera init failed, see log for details.
+2023-07-01 20:40:34,961 ERROR [default] Program crashed, will restart in 0 second(s)... 
+2023-07-01 20:40:35,061 ERROR [default] Find No Devices.
+2023-07-01 20:40:35,062 ERROR [default] <St13runtime_error> thrown in file "/home/iruma/Desktop/UGASwithBuff/src/Core/ImgCapture/Common/HikCameraCapture.h", line 226, at [unknown function]
+2023-07-01 20:40:35,062 ERROR [default] Uncaught St13runtime_error: HikCamera init failed, see log for details.
+2023-07-01 20:40:35,062 ERROR [default] Program crashed, will restart in 0 second(s)... 
+2023-07-01 20:40:35,162 ERROR [default] Find No Devices.
+2023-07-01 20:40:35,163 ERROR [default] <St13runtime_error> thrown in file "/home/iruma/Desktop/UGASwithBuff/src/Core/ImgCapture/Common/HikCameraCapture.h", line 226, at [unknown function]
+2023-07-01 20:40:35,163 ERROR [default] Uncaught St13runtime_error: HikCamera init failed, see log for details.
+2023-07-01 20:40:35,163 ERROR [default] Program crashed, will restart in 0 second(s)... 
+2023-07-01 20:40:35,263 ERROR [default] Find No Devices.
+2023-07-01 20:40:35,263 ERROR [default] <St13runtime_error> thrown in file "/home/iruma/Desktop/UGASwithBuff/src/Core/ImgCapture/Common/HikCameraCapture.h", line 226, at [unknown function]
+2023-07-01 20:40:35,263 ERROR [default] Uncaught St13runtime_error: HikCamera init failed, see log for details.
+2023-07-01 20:40:35,263 ERROR [default] Program crashed, will restart in 0 second(s)... 
+2023-07-01 20:40:35,364 ERROR [default] Find No Devices.
+2023-07-01 20:40:35,364 ERROR [default] <St13runtime_error> thrown in file "/home/iruma/Desktop/UGASwithBuff/src/Core/ImgCapture/Common/HikCameraCapture.h", line 226, at [unknown function]
+2023-07-01 20:40:35,364 ERROR [default] Uncaught St13runtime_error: HikCamera init failed, see log for details.
+2023-07-01 20:40:35,364 ERROR [default] Program crashed, will restart in 0 second(s)... 
+2023-07-01 20:40:35,465 ERROR [default] Find No Devices.
+2023-07-01 20:40:35,465 ERROR [default] <St13runtime_error> thrown in file "/home/iruma/Desktop/UGASwithBuff/src/Core/ImgCapture/Common/HikCameraCapture.h", line 226, at [unknown function]
+2023-07-01 20:40:35,465 ERROR [default] Uncaught St13runtime_error: HikCamera init failed, see log for details.
+2023-07-01 20:40:35,465 ERROR [default] Program crashed, will restart in 0 second(s)... 
+2023-07-01 20:40:35,566 ERROR [default] Find No Devices.
+2023-07-01 20:40:35,566 ERROR [default] <St13runtime_error> thrown in file "/home/iruma/Desktop/UGASwithBuff/src/Core/ImgCapture/Common/HikCameraCapture.h", line 226, at [unknown function]
+2023-07-01 20:40:35,566 ERROR [default] Uncaught St13runtime_error: HikCamera init failed, see log for details.
+2023-07-01 20:40:35,566 ERROR [default] Program crashed, will restart in 0 second(s)... 
+2023-07-01 20:40:35,666 ERROR [default] Find No Devices.
+2023-07-01 20:40:35,667 ERROR [default] <St13runtime_error> thrown in file "/home/iruma/Desktop/UGASwithBuff/src/Core/ImgCapture/Common/HikCameraCapture.h", line 226, at [unknown function]
+2023-07-01 20:40:35,667 ERROR [default] Uncaught St13runtime_error: HikCamera init failed, see log for details.
+2023-07-01 20:40:35,667 ERROR [default] Program crashed, will restart in 0 second(s)... 
+2023-07-01 20:40:35,768 ERROR [default] Find No Devices.
+2023-07-01 20:40:35,768 ERROR [default] <St13runtime_error> thrown in file "/home/iruma/Desktop/UGASwithBuff/src/Core/ImgCapture/Common/HikCameraCapture.h", line 226, at [unknown function]
+2023-07-01 20:40:35,768 ERROR [default] Uncaught St13runtime_error: HikCamera init failed, see log for details.
+2023-07-01 20:40:35,768 ERROR [default] Program crashed, will restart in 0 second(s)... 
+2023-07-01 20:40:35,869 ERROR [default] Find No Devices.
+2023-07-01 20:40:35,869 ERROR [default] <St13runtime_error> thrown in file "/home/iruma/Desktop/UGASwithBuff/src/Core/ImgCapture/Common/HikCameraCapture.h", line 226, at [unknown function]
+2023-07-01 20:40:35,870 ERROR [default] Uncaught St13runtime_error: HikCamera init failed, see log for details.
+2023-07-01 20:40:35,870 ERROR [default] Program crashed, will restart in 0 second(s)... 
+2023-07-01 20:40:35,971 ERROR [default] Find No Devices.
+2023-07-01 20:40:35,971 ERROR [default] <St13runtime_error> thrown in file "/home/iruma/Desktop/UGASwithBuff/src/Core/ImgCapture/Common/HikCameraCapture.h", line 226, at [unknown function]
+2023-07-01 20:40:35,971 ERROR [default] Uncaught St13runtime_error: HikCamera init failed, see log for details.
+2023-07-01 20:40:35,971 ERROR [default] Program crashed, will restart in 0 second(s)... 
+2023-07-01 20:40:36,072 ERROR [default] Find No Devices.
+2023-07-01 20:40:36,072 ERROR [default] <St13runtime_error> thrown in file "/home/iruma/Desktop/UGASwithBuff/src/Core/ImgCapture/Common/HikCameraCapture.h", line 226, at [unknown function]
+2023-07-01 20:40:36,072 ERROR [default] Uncaught St13runtime_error: HikCamera init failed, see log for details.
+2023-07-01 20:40:36,072 ERROR [default] Program crashed, will restart in 0 second(s)... 
+2023-07-01 20:40:36,173 ERROR [default] Find No Devices.
+2023-07-01 20:40:36,173 ERROR [default] <St13runtime_error> thrown in file "/home/iruma/Desktop/UGASwithBuff/src/Core/ImgCapture/Common/HikCameraCapture.h", line 226, at [unknown function]
+2023-07-01 20:40:36,174 ERROR [default] Uncaught St13runtime_error: HikCamera init failed, see log for details.
+2023-07-01 20:40:36,174 ERROR [default] Program crashed, will restart in 0 second(s)... 
+2023-07-01 20:40:36,275 ERROR [default] Find No Devices.
+2023-07-01 20:40:36,275 ERROR [default] <St13runtime_error> thrown in file "/home/iruma/Desktop/UGASwithBuff/src/Core/ImgCapture/Common/HikCameraCapture.h", line 226, at [unknown function]
+2023-07-01 20:40:36,275 ERROR [default] Uncaught St13runtime_error: HikCamera init failed, see log for details.
+2023-07-01 20:40:36,275 ERROR [default] Program crashed, will restart in 0 second(s)... 
+2023-07-01 20:40:36,376 ERROR [default] Find No Devices.
+2023-07-01 20:40:36,376 ERROR [default] <St13runtime_error> thrown in file "/home/iruma/Desktop/UGASwithBuff/src/Core/ImgCapture/Common/HikCameraCapture.h", line 226, at [unknown function]
+2023-07-01 20:40:36,377 ERROR [default] Uncaught St13runtime_error: HikCamera init failed, see log for details.
+2023-07-01 20:40:36,377 ERROR [default] Program crashed, will restart in 0 second(s)... 
+2023-07-01 20:40:36,477 ERROR [default] Find No Devices.
+2023-07-01 20:40:36,478 ERROR [default] <St13runtime_error> thrown in file "/home/iruma/Desktop/UGASwithBuff/src/Core/ImgCapture/Common/HikCameraCapture.h", line 226, at [unknown function]
+2023-07-01 20:40:36,478 ERROR [default] Uncaught St13runtime_error: HikCamera init failed, see log for details.
+2023-07-01 20:40:36,478 ERROR [default] Program crashed, will restart in 0 second(s)... 
+2023-07-01 20:40:36,579 ERROR [default] Find No Devices.
+2023-07-01 20:40:36,579 ERROR [default] <St13runtime_error> thrown in file "/home/iruma/Desktop/UGASwithBuff/src/Core/ImgCapture/Common/HikCameraCapture.h", line 226, at [unknown function]
+2023-07-01 20:40:36,579 ERROR [default] Uncaught St13runtime_error: HikCamera init failed, see log for details.
+2023-07-01 20:40:36,579 ERROR [default] Program crashed, will restart in 0 second(s)... 

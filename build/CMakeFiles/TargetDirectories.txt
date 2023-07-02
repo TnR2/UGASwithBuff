@@ -1,0 +1,15 @@
+/home/iruma/Documents/gitupload/UGASwithBuff/build/CMakeFiles/UGAS.dir
+/home/iruma/Documents/gitupload/UGASwithBuff/build/CMakeFiles/edit_cache.dir
+/home/iruma/Documents/gitupload/UGASwithBuff/build/CMakeFiles/rebuild_cache.dir
+/home/iruma/Documents/gitupload/UGASwithBuff/build/src/Control/CMakeFiles/Control.dir
+/home/iruma/Documents/gitupload/UGASwithBuff/build/src/Control/CMakeFiles/edit_cache.dir
+/home/iruma/Documents/gitupload/UGASwithBuff/build/src/Control/CMakeFiles/rebuild_cache.dir
+/home/iruma/Documents/gitupload/UGASwithBuff/build/src/Core/CMakeFiles/Core.dir
+/home/iruma/Documents/gitupload/UGASwithBuff/build/src/Core/CMakeFiles/edit_cache.dir
+/home/iruma/Documents/gitupload/UGASwithBuff/build/src/Core/CMakeFiles/rebuild_cache.dir
+/home/iruma/Documents/gitupload/UGASwithBuff/build/src/ThirdParty/CMakeFiles/ThirdParty.dir
+/home/iruma/Documents/gitupload/UGASwithBuff/build/src/ThirdParty/CMakeFiles/edit_cache.dir
+/home/iruma/Documents/gitupload/UGASwithBuff/build/src/ThirdParty/CMakeFiles/rebuild_cache.dir
+/home/iruma/Documents/gitupload/UGASwithBuff/build/src/Util/CMakeFiles/Util.dir
+/home/iruma/Documents/gitupload/UGASwithBuff/build/src/Util/CMakeFiles/edit_cache.dir
+/home/iruma/Documents/gitupload/UGASwithBuff/build/src/Util/CMakeFiles/rebuild_cache.dir
