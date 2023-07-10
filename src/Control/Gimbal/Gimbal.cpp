@@ -41,9 +41,9 @@
 
 void Gimbal::Always() {
 //    auto imgCapture = RotateCapture<HikCameraCapture>(cv::RotateFlags::ROTATE_180);
-    auto imgCapture = HikCameraCapture();
+    //auto imgCapture = HikCameraCapture();
 //    auto imgCapture = CVVideoCapture("buff_blue2.mp4");
-//    auto imgCapture = CVVideoCapture("buff_red.mp4");
+    auto imgCapture = CVVideoCapture("buff_red.mp4");
 
     auto rec = VideoRecorder_V1(cv::Size(1440, 1080)); // video(1920,1080) cam(1440,1080)
 
@@ -87,7 +87,7 @@ void Gimbal::Always() {
                 debugCanvas.master.LoadMat(img);
             }
             
-            //Shoot buff mode
+            //Shoot buff mode，我在我这里测试的时候设置的是true，你们上场要换false
             if (false || cboard.GetAimingState() == AimingState::Buff) {
                 //陀螺仪正常时使用陀螺仪数据的代码
                 if(transformer.Available())
