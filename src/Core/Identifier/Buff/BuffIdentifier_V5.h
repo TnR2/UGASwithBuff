@@ -138,7 +138,7 @@ public:
 		//std::cout << output_buffer.size() << output_buffer.rows;
 
 		float* target[6] = { 0 };
-		float confidence[3];
+		float confidence[3]={.0f,.0f,.0f};
 		int confidence_index[3];//对于R，ToShoot和Shot三个类别，其得分最大的数值所在的行数
 
 		for (int i = 0; i < output_buffer.rows; ++i)
@@ -180,25 +180,26 @@ public:
 		float heightR = hR * scale;
 		_buffRPoint=cv::Point2f(cxR,cyR);
 		cv::rectangle(img, cv::Rect(leftR,topR,widthR,heightR), cv::Scalar(0, 0, 255), 1);
-
-		//获取击打点的二维坐标，把能量机关轮廓框出
-		float cx = ToShoot.at<float>(0,0);
-		float cy = ToShoot.at<float>(0,1);
-		float w = ToShoot.at<float>(0,2);
-		float h = ToShoot.at<float>(0,3);
-		float left = (cx - 0.5 * w) * scale;
-		float top = (cy - 0.5 * h) * scale;
-		float width = w * scale;
-		float height = h * scale;
-		cv::rectangle(img, cv::Rect(left, top, width, height), cv::Scalar(0, 0, 255), 1);
-		for(int j=0;j<5;j++)
+		if(confidence[1]>0.25)
 		{
-			float x = ToShoot.at<float>(0, 7 + j * 3)*scale;
-			float y = ToShoot.at<float>(0, 7 + j * 3 + 1)*scale;
-			circle(img, cv::Point(x, y), 3, _colors[j], -1);
-			_buffPlate5Points[j] = cv::Point2f(x, y);
+			//获取击打点的二维坐标，把能量机关轮廓框出
+			float cx = ToShoot.at<float>(0,0);
+			float cy = ToShoot.at<float>(0,1);
+			float w = ToShoot.at<float>(0,2);
+			float h = ToShoot.at<float>(0,3);
+			float left = (cx - 0.5 * w) * scale;
+			float top = (cy - 0.5 * h) * scale;
+			float width = w * scale;
+			float height = h * scale;
+			cv::rectangle(img, cv::Rect(left, top, width, height), cv::Scalar(0, 0, 255), 1);
+			for(int j=0;j<5;j++)
+			{
+				float x = ToShoot.at<float>(0, 7 + j * 3)*scale;
+				float y = ToShoot.at<float>(0, 7 + j * 3 + 1)*scale;
+				circle(img, cv::Point(x, y), 3, _colors[j], -1);
+				_buffPlate5Points[j] = cv::Point2f(x, y);
+			}
 		}
-
 
 		if (_buffPlate5Points[4].x == 0) {
 			return std::nullopt; 
