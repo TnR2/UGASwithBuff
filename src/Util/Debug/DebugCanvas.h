@@ -11,10 +11,10 @@ Header Functions:
 
 #include <opencv2/opencv.hpp>
 
+#include "config.h"
 #include "MatForm/MatForm.hpp"
 #include "MatForm/RectangleControl.hpp"
 #include "MatForm/ButtonControl.hpp"
-#include "Util/Debug/DebugSettings.h"
 
 template<bool Enabled>
 class ControlCanvas : private MatForm {
@@ -235,10 +235,10 @@ public:
 };
 
 
-#define MAKE_CONTROL_CANVAS(enable, name, arg) ControlCanvas<DEBUG_IMG && enable> name = ControlCanvas<DEBUG_IMG && enable>(arg, &_matFormList);
-#define MAKE_SIMPLE_CANVAS(enable, name, arg) SimpleCanvas<DEBUG_IMG && enable> name = SimpleCanvas<DEBUG_IMG && enable>(arg, &_matFormList);
-#define MAKE_REFERENCE_CANVAS(enable, name, target) ReferenceCanvas<decltype(target), DEBUG_IMG && enable> name = target;
-#define MAKE_READONLY_CANVAS(enable, name, arg) ReadonlyCanvas<DEBUG_IMG && enable> name = ReadonlyCanvas<DEBUG_IMG && enable>(arg, &_matFormList);
+#define MAKE_CONTROL_CANVAS(enable, name, arg) ControlCanvas<ENABLE_DEBUG_CANVAS && enable> name = ControlCanvas<ENABLE_DEBUG_CANVAS && enable>(arg, &_matFormList);
+#define MAKE_SIMPLE_CANVAS(enable, name, arg) SimpleCanvas<ENABLE_DEBUG_CANVAS && enable> name = SimpleCanvas<ENABLE_DEBUG_CANVAS && enable>(arg, &_matFormList);
+#define MAKE_REFERENCE_CANVAS(enable, name, target) ReferenceCanvas<decltype(target), ENABLE_DEBUG_CANVAS && enable> name = target;
+#define MAKE_READONLY_CANVAS(enable, name, arg) ReadonlyCanvas<ENABLE_DEBUG_CANVAS && enable> name = ReadonlyCanvas<ENABLE_DEBUG_CANVAS && enable>(arg, &_matFormList);
 
 class DebugCanvas {
 private:
@@ -260,14 +260,6 @@ public:
         for (const auto ptrForm : _matFormList) {
             ptrForm->Show();
         }
-    }
-
-    cv::Mat GetAll() {
-        cv::Mat img;
-        for (const auto ptrForm : _matFormList) { // wait for checking
-            img = *ptrForm;
-        }
-        return img;
     }
 };
 /*

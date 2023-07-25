@@ -16,12 +16,9 @@ Header Functions:
 #include "Core/Identifier/Buff/BuffStruct.h"
 
 
-/*
-  position: ( developer(me) didn't find varible 'position', please reference to armor PNP solver )
-*/
 class BuffPnPSolverInterface {
 public:
 	virtual ~BuffPnPSolverInterface() = default;
 
-	virtual void Solve(const BuffPlate& buffPlate) = 0;
+	virtual std::optional<cv::Point3f> Solve(const Buff5Point& buff5Point) = 0;
 };

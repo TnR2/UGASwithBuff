@@ -8,6 +8,8 @@ Header Functions:
 - 提供获取系统时间戳的方法
 */
 
+#include <chrono>
+
 typedef unsigned long long TimeStamp;
 
 class TimeStampCounter {

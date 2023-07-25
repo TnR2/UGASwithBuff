@@ -58,8 +58,6 @@ public:
         }
         //cv::rotate(img, img, cv::ROTATE_180);
         timestamp = TimeStampCounter::GetTimeStamp();
-        timestamp = VideoCapture::get(cv::CAP_PROP_POS_MSEC) + 1000000;
-        //std::cout<<timestamp<<std::endl;
         return result;
     }
 };

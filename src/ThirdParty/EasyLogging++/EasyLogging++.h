@@ -378,7 +378,9 @@ ELPP_INTERNAL_DEBUGGING_OUT_INFO << ELPP_INTERNAL_DEBUGGING_MSG(internalInfoStre
 #   include <sys/time.h>
 #elif ELPP_OS_WINDOWS
 #   include <direct.h>
+#   define NOMINMAX
 #   include <windows.h>
+#   undef NOMINMAX
 #  if defined(WIN32_LEAN_AND_MEAN)
 #      if defined(ELPP_WINSOCK2)
 #         include <winsock2.h>
@@ -1043,7 +1045,7 @@ static inline std::string getCurrentThreadId(void) {
 namespace utils {
 class File : base::StaticClass {
  public:
-  /// @brief Creates new out file stream for specified _vwFilename.
+  /// @brief Creates new out file stream for specified filename.
   /// @return Pointer to newly created fstream or nullptr
   static base::type::fstream_t* newFileStream(const std::string& filename);
 
@@ -1056,13 +1058,13 @@ class File : base::StaticClass {
   /// @brief Creates specified path on file system
   /// @param path Path to create.
   static bool createPath(const std::string& path);
-  /// @brief Extracts path of _vwFilename with leading slash
+  /// @brief Extracts path of filename with leading slash
   static std::string extractPathFromFilename(const std::string& fullPath,
       const char* separator = base::consts::kFilePathSeparator);
-  /// @brief builds stripped _vwFilename and puts it in buff
+  /// @brief builds stripped filename and puts it in buff
   static void buildStrippedFilename(const char* filename, char buff[],
                                     std::size_t limit = base::consts::kSourceFilenameMaxLength);
-  /// @brief builds base _vwFilename and puts it in buff
+  /// @brief builds base filename and puts it in buff
   static void buildBaseFilename(const std::string& fullPath, char buff[],
                                 std::size_t limit = base::consts::kSourceFilenameMaxLength,
                                 const char* separator = base::consts::kFilePathSeparator);

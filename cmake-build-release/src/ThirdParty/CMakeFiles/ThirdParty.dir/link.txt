@@ -1,2 +1,0 @@
-/usr/bin/ar qc /home/alliance/Desktop/UGAS/lib/libThirdParty.a CMakeFiles/ThirdParty.dir/EasyLogging++/EasyLogging++.cc.o CMakeFiles/ThirdParty.dir/Serial/impl/list_ports/list_ports_linux.cc.o CMakeFiles/ThirdParty.dir/Serial/impl/list_ports/list_ports_osx.cc.o CMakeFiles/ThirdParty.dir/Serial/impl/list_ports/list_ports_win.cc.o CMakeFiles/ThirdParty.dir/Serial/impl/unix.cc.o CMakeFiles/ThirdParty.dir/Serial/impl/win.cc.o CMakeFiles/ThirdParty.dir/Serial/serial.cc.o
-/usr/bin/ranlib /home/alliance/Desktop/UGAS/lib/libThirdParty.a

@@ -25,7 +25,7 @@ public:
     struct QuaternionReceive {
         char head = 0x00;            // Should be 0x40
         float w, x, y, z;            // Quaternion Data
-        char crc8;                    // CRC8
+        char crc8;                   // CRC8
     };
 #pragma pack(pop)
 
@@ -120,10 +120,10 @@ private:
                     LOG(WARNING) << "Invaild Verify Degit!";
             }
             if (received) {
-                const auto& data = receiver.GetReceivedData();
+                /*const auto& data = receiver.GetReceivedData();
                 auto q = Eigen::Quaternionf(data.w, data.x, data.y, data.z);
                 auto size = _serial.available();
-                std::cout << size << ' ' << q << '\n';
+                std::cout << size << ' ' << q << '\n';*/
             }
             //std::this_thread::sleep_for(std::chrono::milliseconds(100));
 

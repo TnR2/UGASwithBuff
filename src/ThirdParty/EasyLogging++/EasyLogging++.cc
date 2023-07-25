@@ -207,7 +207,7 @@ static struct ConfigurationStringToTypeItem configStringToTypeMap[] = {
   { "to_file", ConfigurationType::ToFile },
   { "to_standard_output", ConfigurationType::ToStandardOutput },
   { "format", ConfigurationType::Format },
-  { "_vwFilename", ConfigurationType::Filename },
+  { "filename", ConfigurationType::Filename },
   { "subsecond_precision", ConfigurationType::SubsecondPrecision },
   { "milliseconds_width", ConfigurationType::MillisecondsWidth },
   { "performance_tracking", ConfigurationType::PerformanceTracking },
@@ -1636,7 +1636,7 @@ bool TypedConfigurations::toFile(Level level) {
 }
 
 const std::string& TypedConfigurations::filename(Level level) {
-  return getConfigByRef<std::string>(level, &m_filenameMap, "_vwFilename");
+  return getConfigByRef<std::string>(level, &m_filenameMap, "filename");
 }
 
 bool TypedConfigurations::toStandardOutput(Level level) {
@@ -1688,7 +1688,7 @@ void TypedConfigurations::build(Configurations* configurations) {
     } else if (conf->configurationType() == ConfigurationType::ToStandardOutput) {
       setValue(conf->level(), getBool(conf->value()), &m_toStandardOutputMap);
     } else if (conf->configurationType() == ConfigurationType::Filename) {
-      // We do not yet configure _vwFilename but we will configure in another
+      // We do not yet configure filename but we will configure in another
       // loop. This is because if file cannot be created, we will force ToFile
       // to be false. Because configuring logger is not necessarily performance
       // sensitive operation, we can live with another loop; (by the way this loop
@@ -1711,7 +1711,7 @@ void TypedConfigurations::build(Configurations* configurations) {
       setValue(conf->level(), static_cast<std::size_t>(getULong(conf->value())), &m_logFlushThresholdMap);
     }
   }
-  // As mentioned earlier, we will now set _vwFilename configuration in separate loop to deal with non-existent files
+  // As mentioned earlier, we will now set filename configuration in separate loop to deal with non-existent files
   for (Configurations::const_iterator it = configurations->begin(); it != configurations->end(); ++it) {
     Configuration* conf = *it;
     if (conf->configurationType() == ConfigurationType::Filename) {
@@ -1772,7 +1772,7 @@ std::string TypedConfigurations::resolveFilename(const std::string& filename) {
       }
       base::SubsecondPrecision ssPrec(3);
       std::string now = base::utils::DateTime::getDateTime(fmt.c_str(), &ssPrec);
-      base::utils::Str::replaceAll(now, '/', '-'); // Replace path element since we are dealing with _vwFilename
+      base::utils::Str::replaceAll(now, '/', '-'); // Replace path element since we are dealing with filename
       base::utils::Str::replaceAll(resultingFilename, dateTimeFormatSpecifierStr, now);
     }
   }
@@ -1824,7 +1824,7 @@ bool TypedConfigurations::unsafeValidateFileRolling(Level level, const PreRollOu
   std::size_t maxLogFileSize = unsafeGetConfigByVal(level, &m_maxLogFileSizeMap, "maxLogFileSize");
   std::size_t currFileSize = base::utils::File::getSizeOfFile(fs);
   if (maxLogFileSize != 0 && currFileSize >= maxLogFileSize) {
-    std::string fname = unsafeGetConfigByRef(level, &m_filenameMap, "_vwFilename");
+    std::string fname = unsafeGetConfigByRef(level, &m_filenameMap, "filename");
     ELPP_INTERNAL_INFO(1, "Truncating log file [" << fname << "] as a result of configurations for level ["
                        << LevelHelper::convertToString(level) << "]");
     fs->close();
@@ -2188,10 +2188,10 @@ void Storage::setApplicationArguments(int argc, char** argv) {
 #if defined(ELPP_THREAD_SAFE)
 void LogDispatchCallback::handle(const LogDispatchData* data) {
   base::threading::ScopedLock scopedLock(m_fileLocksMapLock);
-  std::string _vwFilename = data->logMessage()->logger()->typedConfigurations()->_vwFilename(data->logMessage()->level());
-  auto lock = m_fileLocks.find(_vwFilename);
+  std::string filename = data->logMessage()->logger()->typedConfigurations()->filename(data->logMessage()->level());
+  auto lock = m_fileLocks.find(filename);
   if (lock == m_fileLocks.end()) {
-    m_fileLocks.emplace(std::make_pair(_vwFilename, std::unique_ptr<base::threading::Mutex>(new base::threading::Mutex)));
+    m_fileLocks.emplace(std::make_pair(filename, std::unique_ptr<base::threading::Mutex>(new base::threading::Mutex)));
   }
 }
 #else
@@ -2342,7 +2342,7 @@ void AsyncDispatchWorker::handle(AsyncLogItem* logItem) {
         fs->write(logLine.c_str(), logLine.size());
         if (fs->fail()) {
           ELPP_INTERNAL_ERROR("Unable to write log to file ["
-                              << conf->_vwFilename(logMessage->level()) << "].\n"
+                              << conf->filename(logMessage->level()) << "].\n"
                               << "Few possible reasons (could be something else):\n" << "      * Permission denied\n"
                               << "      * Disk full\n" << "      * Disk is not writable", true);
         } else {

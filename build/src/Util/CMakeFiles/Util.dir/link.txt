@@ -1,2 +1,0 @@
-/usr/bin/ar qc ../../../lib/libUtil.a CMakeFiles/Util.dir/Debug/DebugCanvas.cpp.o CMakeFiles/Util.dir/Debug/Log.cpp.o CMakeFiles/Util.dir/Debug/MatForm/MatForm.cpp.o CMakeFiles/Util.dir/Parameter/Parameters.cpp.o CMakeFiles/Util.dir/TimeStamp/TimeStampCounter.cpp.o
-/usr/bin/ranlib ../../../lib/libUtil.a

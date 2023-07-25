@@ -30,10 +30,10 @@ public:
         uint8_t selfColor;             // 自身队伍颜色：1-红，2-蓝
         uint8_t presetBulletSpeed;     // 预设弹速，单位：m/s
         float bulletSpeed;             // 实时弹速，单位：m/s
-        uint8_t     aimingState;	// 自瞄状态 0:inative, 1:active, 2:buff
+        uint8_t autoscopeState;        // 自瞄状态 0:Disable, 1:Enable(Normal), 2:Enable(Buff)
+        uint16_t    remainingTime;  // 比赛剩余时间
         float       yaw, pitch;		// C板陀螺仪
-        uint16_t    remaningTime;   // 比赛剩余时间
-        float       initYaw;        // 开启Buff的yaw
+        float       initYaw;        // 开启Buff时的Yaw
         uint8_t     r[9];			// 占位符
     };
 #pragma pack(pop)
@@ -52,18 +52,17 @@ public:
     void Send(double yaw, double pitch) {
         _sender.Data.yaw = -yaw * 180.0 / MathConsts::Pi;
         _sender.Data.pitch = -pitch * 180.0 / MathConsts::Pi;
+        //std::cout << "send: [" << _sender.Data.yaw << ", " << _sender.Data.pitch << "]" << std::endl;
         _sender.Send();
-        std::cout<<"send data: ["<<_sender.Data.yaw<<", "<<_sender.Data.pitch<<"]"<<std::endl;
     }
 
     /*! 向无人机发送云台瞄准数据
     * \param yaw pitch 单位使用弧度制，方向遵循右手定则
     */
     void SendUAV(double yaw, double pitch) {
-        _sender.Data.yaw = -yaw * 180.0 / MathConsts::Pi;
-        _sender.Data.pitch = -pitch * 180.0 / MathConsts::Pi;
+        _sender.Data.yaw = -yaw;
+        _sender.Data.pitch = -pitch;
         _sender.Send();
-        std::cout<<"send data: ["<<_sender.Data.yaw<<", "<<_sender.Data.pitch<<"]"<<std::endl;
     }
     
     void Receive() {
@@ -75,15 +74,18 @@ public:
                 received = true;
             else if (result == SerialUtil::ReceiveResult::Timeout)
                 break;
-            else if (result == SerialUtil::ReceiveResult::InvaildHeader) {
-                //LOG(WARNING) << "CboardInfantry: Invaild Header!";
-            }
-            else if (result == SerialUtil::ReceiveResult::InvaildVerifyDegit) {
-                //LOG(WARNING) << "CboardInfantry: Invaild Verify Degit!";
-            }
+            else if (result == SerialUtil::ReceiveResult::InvaildHeader)
+                LOG(WARNING) << "CboardInfantry: Invaild Header!";
+            else if (result == SerialUtil::ReceiveResult::InvaildVerifyDegit)
+                LOG(WARNING) << "CboardInfantry: Invaild Verify Degit!";
         }
 
         if (received) {
+            if (!_receiveSuccessed) {
+                LOG(INFO) << "CboardInfantry: Successfully received package.";
+                _receiveSuccessed = true;
+            }
+
             const auto& data = _receiver.GetReceivedData();
 
             if (data.selfColor == 1)        // 己方红色，击打蓝色
@@ -91,39 +93,12 @@ public:
             else if (data.selfColor == 2)   // 己方蓝色，击打红色
                 _enemyColor = ArmorColor::Red;
 
-            _bulletSpeed = data.presetBulletSpeed;  // 暂时不处理实时弹速
-            
-            _initYaw = -data.initYaw;
-            //std::cout << "init yaw = " << -data.yaw << std::endl;
-
-            _tempLastAimingState = _tempAimingState;
-            _tempAimingState = static_cast<AimingState>(data.aimingState);
-            static int aseqltimes = 0;
-            if (_tempLastAimingState == _tempAimingState) aseqltimes++;
-            else aseqltimes = 0;
-            if (aseqltimes > 5) {
-                //std::cout << aseqltimes << " update state, yaw, pitch" << std::endl;
-
-                _lastAimingState = _aimingState;
-                _aimingState = _tempAimingState;
-
-                _yaw = -data.yaw - _initYaw;
-                _pitch = -data.pitch;
-                //std::cout << "received gyros attitude: [" << _yaw << ", " << _pitch << "]" << std::endl;
-            }
-            else {
-                //std::cout << aseqltimes << " didn't update state, yaw, pitch" << std::endl;
-            }
-//                std::cout << aseqltimes << " @  " <<
-//                    (int)_tempLastAimingState << "-" << (int)_tempAimingState << "  " <<
-//                    (int)_lastAimingState << "-" << (int)_aimingState << std::endl;
-//
-//                if(_lastAimingState != AimingState::Buff && _aimingState == AimingState::Buff) {
-//                    std::cout << "init yaw = " << -data.yaw << std::endl;
-//                    _initYaw = -data.yaw;
-//                }
-
-            _remaningTime = data.remaningTime;
+            //_bulletSpeed = data.presetBulletSpeed;  // 暂时不处理实时弹速
+            _autoscopeState = static_cast<AutoscopeState>(data.autoscopeState);
+            _remainingTime = data.remainingTime;
+            _yaw = data.yaw;
+            _pitch = data.pitch;
+            //std::cout << "receive: [" << _yaw << ", " << _pitch << "]" << std::endl;
         }
     }
 
@@ -135,28 +110,27 @@ public:
         return _bulletSpeed;
     }
 
-    AimingState GetAimingState() {
-        return _aimingState;
+    AutoscopeState GetAutoscopeState() {
+        return _autoscopeState;
     }
 
     GimbalAttitude GetGyrosAttitude() {
         return { _yaw, _pitch };
     }
 
-    unsigned short GetRemaningTime() {
-        return _remaningTime;
+    uint16_t GetRemainingTime() {
+        return _remainingTime;
     }
 
 private:
     serial::Serial _serial;
+    bool _receiveSuccessed = false;
 
     SerialUtil::SerialSender<DataSend, SerialUtil::Head<uint8_t, 0xff>, CRC::DjiCRC8Calculator> _sender;
     SerialUtil::SerialReceiver<DataReceive, SerialUtil::Head<uint8_t, 0xff>, CRC::DjiCRC8Calculator> _receiver;
     ArmorColor _enemyColor = Parameters::DefaultEnemyColor;
     float _bulletSpeed = Parameters::DefaultBulletSpeed;
-    AimingState _lastAimingState = AimingState::Inactive, _aimingState = AimingState::Inactive, 
-                _tempLastAimingState = AimingState::Inactive, _tempAimingState = AimingState::Inactive;
+    AutoscopeState _autoscopeState = AutoscopeState::Disable, _lastAutoscopeState = AutoscopeState::Disable;
     float _initYaw = .0f, _yaw = .0f, _pitch = .0f;
-    uint16_t _remaningTime = 3600;
-
+    uint16_t _remainingTime = 3600;
 };

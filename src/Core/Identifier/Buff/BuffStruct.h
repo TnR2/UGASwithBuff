@@ -9,6 +9,9 @@ Header Functions:
 */
 
 #include <opencv2/opencv.hpp>
+#include <utility>
+
+#include "Core/Transformer/IMUTransformer.h"
 
 #include "Util/TimeStamp/TimeStampCounter.h"
 #include "Util/Debug/Log.h"
@@ -17,20 +20,6 @@ Header Functions:
 enum class BuffMode { UnknownBuff = 0, SmallBuff, BigBuff };
 
 // waring: asynchronous construction with evaluation
-
-// 4 * 2D points
-struct BuffPlate {
-	std::vector<cv::Point2f> points;
-
-	void Set(const cv::Point2f armorCenter, const cv::Point2f leftPoint,
-		const cv::Point2f rightPoint, const cv::Point2f rCenter) {
-		points.clear();
-		points.push_back(armorCenter);
-		points.push_back(leftPoint);
-		points.push_back(rightPoint);
-		points.push_back(rCenter);
-	}
-};
 
 // 5 * 2D points
 struct Buff5Point {
@@ -65,23 +54,6 @@ struct BuffAngularSpeed {
 	BuffAngularSpeed(TimeStamp ts, float s) : timeStamp(ts), speed(s) {}
 };
 
-// 4 * 2D points identify data
-struct BuffIdentifyData {
-	cv::Point2f leftPoint;
-	cv::Point2f rightPoint;
-	cv::Point2f rCenter;
-	float radius;
-
-	BuffAngle buffAngle;
-	BuffAngularSpeed buffAngularSpeed;
-
-	BuffIdentifyData() {}
-	BuffIdentifyData(cv::Point2f lp, cv::Point2f rp, cv::Point2f rc, float r,
-		BuffAngle ba, BuffAngularSpeed bas) :
-		leftPoint(lp), rightPoint(rp), rCenter(rc), radius(r),
-		buffAngle(ba), buffAngularSpeed(bas) {}
-};
-
 // 5 * 2D points identify data
 struct Buff5PointIdentifyData {
 	cv::Point2f rightUp;
@@ -94,13 +66,17 @@ struct Buff5PointIdentifyData {
 	BuffAngle buffAngle;
 	BuffAngularSpeed buffAngularSpeed;
 
-	Buff5PointIdentifyData() {}
+    IMUTransformer transformer;
+
+	Buff5PointIdentifyData() = default;
 	Buff5PointIdentifyData(cv::Point2f rightUP, cv::Point2f leftUP,
 						   cv::Point2f leftLOW, cv::Point2f rightLOW, 
 						   cv::Point2f Center, float r,
-						   BuffAngle ba, BuffAngularSpeed bas) :
+						   BuffAngle ba, BuffAngularSpeed bas,
+                           IMUTransformer trans) :
 		rightUp(rightUP), leftUp(leftUP), leftLow(leftLOW), rightLow(rightLOW),
-		rCenter(Center), radius(r), buffAngle(ba), buffAngularSpeed(bas) {}
+		rCenter(Center), radius(r), buffAngle(ba), buffAngularSpeed(bas),
+        transformer(std::move(trans)) {}
 };
 
 struct BuffFitData {

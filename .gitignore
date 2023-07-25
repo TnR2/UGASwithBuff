@@ -1,0 +1,10 @@
+build
+cmake-build-debug
+cmake-build-release
+resources
+.vs
+.vscode
+.idea
+x64
+dockerBase
+myeasylog.log

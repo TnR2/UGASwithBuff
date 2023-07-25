@@ -8,8 +8,6 @@ Header Functions:
 - interface for identify power rune
 */
 
-#include <vector>
-
 #include <opencv2/opencv.hpp>
 
 #include "Core/Identifier/Buff/BuffStruct.h"
@@ -20,5 +18,5 @@ class BuffIdentifierInterface {
 public:
 	virtual ~BuffIdentifierInterface() = default;
 
-	virtual BuffIdentifyData Identify(const cv::Mat& img, const TimeStamp& timeStamp) = 0;
+	virtual Buff5PointIdentifyData Identify(const cv::Mat& img, const TimeStamp& timeStamp) = 0;
 };

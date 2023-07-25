@@ -17,5 +17,5 @@ class BuffPredictorInterface final {
 public:
 	virtual ~BuffPredictorInterface() = default;
 
-	virtual void Predict(const BuffIdentifyData&) = 0;
+	virtual void Predict(double deltaTimeSec) = 0;
 };

@@ -11,6 +11,7 @@ Header Functions:
 #include <chrono>
 #include <thread>
 #include <chrono>
+#include <atomic>
 #include <optional>
 
 #include <eigen3/Eigen/Dense>
@@ -114,10 +115,10 @@ private:
 
                 serial::Serial serial(_portName, 115200, serial::Timeout::simpleTimeout(100));
                 SerialUtil::SerialReceiver<DataD1, SerialUtil::Head<uint16_t, 0xa55a>, DataCRC16Calculator> receiver(serial);
+
                 while (true) {
                     if (_destructed) return;
                     try {
-
 
                         auto result = receiver.Receive();
                         if (result == SerialUtil::ReceiveResult::Success) {
@@ -126,10 +127,11 @@ private:
                             // 每次GetReceivedData得到的数据，其生命周期持续到下次Receive成功后，再次调用Receive前。
                             // TODO: 这里使用指针存储四元数实现无锁，有极小概率在读取时获得错误数据。
                             _transQuat = &(data.quat[0]);
+                            //std::cout << data.quat[0] << ' ' << data.quat[1] << ' ' << data.quat[2] << ' ' << data.quat[3] << '\n';
 
                             if (imuFps.Count()) {
                                 _available = imuFps.GetFPS() > 100;
-                                std::cout << "HiPNUC IMU Fps: " << imuFps.GetFPS() << '\n';
+                                //std::cout << "HiPNUC IMU Fps: " << imuFps.GetFPS() << '\n';
                             }
                         }
                         else if (result == SerialUtil::ReceiveResult::InvaildHeader)
@@ -153,14 +155,14 @@ private:
                 
             }
             catch (serial::IOException& e) {
-                  //LOG(ERROR) << "HiPNUC: Caught serial::IOException when serial init: " << e.what();
+                LOG(ERROR) << "HiPNUC: Caught serial::IOException when serial init: " << e.what();
             }
             catch (std::exception& e) {
                 LOG(ERROR) << "HiPNUC: Uncaught " << typeid(e).name() << ": " << e.what();
             }
 
             _available = false;
-            //LOG(ERROR) << "HiPNUC: Will reconnect in 1 second.";
+            LOG(ERROR) << "HiPNUC: Will reconnect in 1 second.";
             auto timingStart = std::chrono::steady_clock::now();
             while (std::chrono::steady_clock::now() - timingStart < std::chrono::seconds(1)) {
                 if (_destructed) return;
